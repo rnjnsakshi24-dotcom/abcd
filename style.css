@@ -1,0 +1,1091 @@
+body{
+
+    margin:0;
+    padding:0;
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+linear-gradient(
+rgba(255,255,255,.93),
+rgba(255,240,245,.93)
+),
+url("background.png");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+
+}
+
+
+.container{
+
+    width:85%;
+    max-width:750px;
+
+    margin:40px auto;
+
+    padding:40px;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(12px);
+
+    border-radius:30px;
+
+    box-shadow:
+
+0 25px 60px rgba(255,105,180,.20),
+0 8px 25px rgba(0,0,0,.08);
+
+    animation:fadeUp .8s ease;
+
+}
+
+h1 {
+
+    color:#ff4d88;
+
+}
+
+
+
+h2 {
+
+    color:#ff6699;
+
+}
+
+
+
+button{
+
+background:linear-gradient(45deg,#ff4d88,#ff85b3);
+
+color:white;
+
+padding:15px 40px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:18px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.4s;
+
+box-shadow:
+0 10px 30px rgba(255,105,180,.35);
+
+}
+
+button:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+0 18px 40px rgba(255,105,180,.45);
+
+}
+
+
+
+
+input{
+
+width:260px;
+
+padding:14px;
+
+font-size:18px;
+
+border-radius:40px;
+
+border:2px solid #ffb3cf;
+
+background:white;
+
+text-align:center;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+input:focus{
+
+border-color:#ff5f95;
+
+box-shadow:
+0 0 15px rgba(255,105,180,.35);
+
+}
+
+
+
+.hidden {
+
+    display:none;
+
+}
+
+
+
+/* Gift */
+.gift{
+
+font-size:140px;
+
+cursor:pointer;
+
+animation:bounce 2s infinite;
+
+transition:.4s;
+
+filter:drop-shadow(0 20px 30px rgba(0,0,0,.18));
+
+}
+
+.gift:hover{
+
+transform:scale(1.15);
+
+}
+
+@keyframes bounce {
+
+
+50% {
+
+transform:translateY(-20px);
+
+}
+
+
+}
+
+
+
+/* Photos */
+
+
+.gallery{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(260px,1fr));
+
+gap:28px;
+
+margin-top:30px;
+
+}
+
+
+
+.gallery img{
+
+width:100%;
+height:320px;
+object-fit:cover;
+
+border-radius:18px;
+
+border:8px solid white;
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.18);
+
+transition:.5s;
+
+}
+
+.gallery img:hover{
+
+transform:scale(1.03);
+
+}
+
+/* Letter */
+
+
+.letter {
+
+background:white;
+
+padding:20px;
+
+border-radius:20px;
+
+font-size:18px;
+
+line-height:1.6;
+
+}
+
+
+
+/* Mobile */
+
+
+@media(max-width:600px){
+
+
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+
+}
+
+/* 📸 POLAROID PHOTOS */
+
+
+
+.polaroid{
+
+background:white;
+
+padding:18px;
+
+border-radius:15px;
+
+box-shadow:
+
+0 15px 35px rgba(0,0,0,.15);
+
+transition:.5s;
+
+}
+
+.polaroid:hover{
+
+transform:rotate(0deg) scale(1.05);
+
+box-shadow:0 18px 35px rgba(0,0,0,.25);
+
+}
+
+
+.polaroid img{
+
+width:100%;
+
+height:320px;
+
+object-fit:cover;
+
+border-radius:8px;
+
+}
+
+
+
+
+
+.polaroid p{
+
+font-size:18px;
+
+font-weight:600;
+
+color:#ff4d88;
+
+margin-top:15px;
+
+}
+
+
+
+@keyframes slide{
+
+
+from{
+
+opacity:0;
+
+transform:
+translateY(50px);
+
+}
+
+
+to{
+
+opacity:1;
+
+}
+
+
+}
+
+
+
+/* 💌 Love Letter */
+
+.loveLetter{
+
+background:#fffdf8;
+
+background-image:
+linear-gradient(
+transparent 96%,
+#f2dcdc 96%
+);
+
+background-size:100% 42px;
+
+
+    max-width:800px;
+
+    margin:auto;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    box-shadow:0 15px 35px rgba(255,105,180,.25);
+
+    text-align:left;
+
+    line-height:1.9;
+
+}
+
+.loveLetter p{
+
+   
+
+font-family:"Lucida Handwriting",cursive;
+
+font-size:18px;
+
+line-height:1.45;
+
+text-align:center;
+
+color:#4a3b3b;
+
+white-space:pre-line;
+
+
+
+}
+
+
+@keyframes slideLetter{
+
+
+from{
+
+transform:translateX(-100px);
+
+opacity:0;
+
+}
+
+
+to{
+
+transform:translateX(0);
+
+opacity:1;
+
+}
+
+
+}
+
+/* 🎂 CAKE ANIMATION */
+
+
+.cake{
+
+font-size:100px;
+
+animation:cakeMove 2s infinite;
+
+}
+
+
+
+@keyframes cakeMove{
+
+
+0%{
+
+transform:translateY(0);
+
+}
+
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+
+100%{
+
+transform:translateY(0);
+
+}
+
+
+}
+
+/* Floating hearts */
+
+body::before{
+
+content:"❤️ 🌸 💕 🌸 ❤️";
+
+position:fixed;
+
+top:10%;
+
+left:0;
+
+width:100%;
+
+font-size:30px;
+
+opacity:0.25;
+
+animation:floatHearts 8s infinite linear;
+
+pointer-events:none;
+
+}
+
+
+@keyframes floatHearts{
+
+from{
+
+transform:translateY(100vh);
+
+}
+
+to{
+
+transform:translateY(-100vh);
+
+}
+
+}
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.loveLetter h2{
+
+text-align:center;
+
+font-size:32px;
+
+}
+
+
+@media(max-width:600px){
+
+.loveLetter{
+
+padding:25px;
+
+}
+
+.loveLetter p{
+
+font-size:10pt;
+
+line-height:1.8;
+
+}
+
+}
+
+/* BIG FINAL LOVE LETTER */
+
+#letter .container,
+#letter {
+
+    width: 95%;
+
+}
+
+/* 🎂 Cake Page */
+
+.cakeContainer{
+
+margin-top:30px;
+
+animation: floatCake 3s ease-in-out infinite;
+
+}
+
+.cakeImage{
+
+width:320px;
+
+max-width:90%;
+
+transition:.6s;
+
+filter:drop-shadow(0 20px 30px rgba(0,0,0,.25));
+
+}
+
+.birthdayTitle{
+
+font-size:40px;
+
+color:#ff4f8b;
+
+animation: glow 2s infinite alternate;
+
+}
+
+.wishText{
+
+font-size:22px;
+
+margin-top:15px;
+
+color:#555;
+
+}
+
+.blowButton{
+
+margin-top:35px;
+
+padding:18px 45px;
+
+font-size:20px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff4f8b;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.blowButton:hover{
+
+transform:scale(1.08);
+
+box-shadow:0 10px 25px rgba(255,79,139,.4);
+
+}
+
+@keyframes floatCake{
+
+0%{
+
+transform:translateY(0px);
+
+}
+
+50%{
+
+transform:translateY(-12px);
+
+}
+
+100%{
+
+transform:translateY(0px);
+
+}
+
+}
+
+@keyframes glow{
+
+from{
+
+text-shadow:0 0 8px pink;
+
+}
+
+to{
+
+text-shadow:0 0 25px hotpink;
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+transform:translateY(30px);
+
+}
+
+to{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+}
+
+/* 🎀 Beautiful Main Heading */
+
+
+h1{
+
+font-family:'Great Vibes',cursive;
+
+font-size:72px;
+
+color:#ff3d7f;
+
+text-align:center;
+
+text-shadow:
+0 5px 18px rgba(255,105,180,.25);
+
+margin-bottom:15px;
+
+}
+
+/* 💌 Envelope */
+
+/* 💌 Romantic Envelope */
+
+.envelope{
+
+    width:520px;
+    max-width:95%;
+    height:360px;
+    margin:60px auto;
+    position:relative;
+    cursor:pointer;
+    perspective:1200px;
+
+}
+
+/* Envelope Body */
+
+.cover{
+
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#f8d7df;
+    border-radius:12px;
+    box-shadow:0 20px 35px rgba(0,0,0,.18);
+    z-index:2;
+
+}
+
+/* Top Flap */
+
+.flap{
+
+    position:absolute;
+    width:100%;
+    height:170px;
+    background:#efc2ce;
+
+    clip-path:polygon(0 0,100% 0,50% 100%);
+
+    transform-origin:top;
+
+    transition:1s;
+
+    z-index:5;
+
+}
+
+/* Wax Seal */
+
+.cover::after{
+
+content:"🐻❤️🐰";
+
+position:absolute;
+
+left:50%;
+top:55%;
+
+transform:translate(-50%,-50%);
+
+width:85px;
+
+height:85px;
+
+background:#d94a6c;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:22px;
+
+color:white;
+
+box-shadow:0 8px 15px rgba(0,0,0,.25);
+
+}
+
+/* Letter */
+
+.letterPaper{
+    position:absolute;
+    left:50%;
+    top:35px;
+    transform:translateX(-50%);
+    width:82%;
+    height:430px;
+
+    background:#fffdf7;
+    border-radius:18px;
+    padding:30px;
+
+    overflow-y:auto;
+    transition:.8s;
+    z-index:1;
+}
+
+/* Opening */
+
+.envelope.open .flap{
+
+transform:rotateX(180deg);
+
+}
+
+.envelope.open .letterPaper{
+
+transform:translate(-50%,-250px);
+
+transition:1.3s ease;
+
+z-index:8;
+
+}
+
+.envelope::before{
+
+content:"✨ ✨ ❤️ ✨ ✨";
+
+position:absolute;
+
+top:-50px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+font-size:24px;
+
+animation:sparkle 2s infinite;
+
+opacity:.8;
+
+}
+
+@keyframes sparkle{
+
+0%{
+
+opacity:.2;
+
+transform:translateX(-50%) scale(.8);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:translateX(-50%) scale(1.1);
+
+}
+
+100%{
+
+opacity:.2;
+
+transform:translateX(-50%) scale(.8);
+
+}
+
+}
+
+/* Daily Message Card */
+
+
+
+#dailyMessage{
+
+background:white;
+
+padding:28px;
+
+border-radius:20px;
+
+font-size:22px;
+
+line-height:1.8;
+
+box-shadow:
+0 12px 30px rgba(255,105,180,.18);
+
+max-width:650px;
+
+margin:auto;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+background:
+
+radial-gradient(circle at 20% 30%,rgba(255,192,203,.25),transparent),
+
+radial-gradient(circle at 80% 60%,rgba(255,182,193,.18),transparent);
+
+}
+
+.slideshow{
+
+max-width:520px;
+margin:auto;
+
+}
+
+.slideshow img{
+
+width:100%;
+height:520px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+border:10px solid white;
+
+box-shadow:
+0 15px 40px rgba(0,0,0,.20);
+
+transition:opacity 1s;
+
+}
+
+.slideshow p{
+
+margin-top:20px;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#ff4d88;
+
+}
+
+.fade{
+
+opacity:.2;
+
+}
+
+/* Slideshow */
+
+.slideshow{
+
+width:100%;
+max-width:700px;
+height:520px;
+
+margin:auto;
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:25px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+}
+
+.slide{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+opacity:0;
+
+transition:opacity 1.5s;
+
+}
+
+.slide.active{
+
+opacity:1;
+
+}
+
+.slide img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+}
+
+/* Slideshow */
+
+.slideshow{
+
+width:100%;
+max-width:700px;
+height:520px;
+
+margin:auto;
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:25px;
+
+box-shadow:0 20px 45px rgba(0,0,0,.18);
+
+}
+
+.slide{
+
+position:absolute;
+
+width:100%;
+height:100%;
+
+opacity:0;
+
+transition:opacity 1.5s;
+
+}
+
+.slide.active{
+
+opacity:1;
+
+}
+
+.slide img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+}
+
+/* 📸 Daily Photo */
+
+.slideshow{
+
+width:100%;
+
+max-width:700px;
+
+margin:30px auto;
+
+text-align:center;
+
+}
+
+.slide{
+
+display:none;
+
+}
+
+.slide.active{
+
+display:block;
+
+animation:fadeIn 1s;
+
+}
+
+.slide img{
+
+max-width:100%;
+
+max-height:650px;
+
+width:auto;
+
+height:auto;
+
+border-radius:20px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+}
