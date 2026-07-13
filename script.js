@@ -191,7 +191,7 @@ let messages=[
 
 "❤️ 29 days to go.<br><br>Just so you know… someone is already more excited for your birthday than you probably are.",
 
-"❤️ 28 days to go.<br><br>You keep asking, "Mujhme aisa kya special hai?"<br><br>Let's see… maybe I'll give you one answer every few days. 🤍",
+"❤️ 28 days to go.<br><br>You keep asking, 'Mujhme aisa kya special hai?'<br><br>Let's see… maybe I'll give you one answer every few days. 🤍",
 
 "❤️ 27 days to go.<br><br>Today's reason: you care more than you let people see.",
 
@@ -245,7 +245,7 @@ let messages=[
 
 "❤️ 2 days to go.<br><br>Just two more sleeps… then I get to celebrate my favourite human.",
 
-"❤️ 1 day to go.<br><br>Tomorrow you'll ask me again, "Mujhme aisa kya special hai?"<br><br>Tomorrow… I'll answer."
+"❤️ 1 day to go.<br><br>Tomorrow you'll ask me again, 'Mujhme aisa kya special hai?'<br><br>Tomorrow… I'll answer."
 
 ];
 
