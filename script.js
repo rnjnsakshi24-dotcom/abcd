@@ -19,11 +19,8 @@ document.getElementById("home").style.display="block";
 
 },1800);
 
-        // ▶️ Start background music
-        const music = document.getElementById("bgMusic");
-        music.play().catch(function(error){
-            console.log(error);
-        });
+        // ▶️ Start background music with intelligent audio selection
+        playBirthdayAudio();
 
     }
 
@@ -33,6 +30,54 @@ document.getElementById("home").style.display="block";
 
     }
 
+}
+
+// 🎵 INTELLIGENT AUDIO SELECTION LOGIC
+// Before 8 August: birthday.mp3
+// On 8 August: happybdaysong.mp3
+// After 8 August: continue existing behavior
+
+function playBirthdayAudio() {
+    const music = document.getElementById("bgMusic");
+    const today = new Date();
+    
+    // Get current date (month = 0-11, so August = 7)
+    const currentMonth = today.getMonth();
+    const currentDate = today.getDate();
+    const currentYear = today.getFullYear();
+    
+    // August 8, 2026 reference date
+    const birthdayMonth = 7; // August
+    const birthdayDate = 8;
+    
+    let audioFile = "birthday.mp3"; // Default
+    
+    // Determine which audio to play
+    if (currentMonth < birthdayMonth) {
+        // Before August - play birthday.mp3
+        audioFile = "birthday.mp3";
+    } else if (currentMonth === birthdayMonth) {
+        // August
+        if (currentDate === birthdayDate) {
+            // Exactly August 8 - play the special birthday song
+            audioFile = "happybdaysong.mp3";
+        } else if (currentDate < birthdayDate) {
+            // Before August 8 - play birthday.mp3
+            audioFile = "birthday.mp3";
+        } else {
+            // After August 8 - continue with existing behavior
+            audioFile = "birthday.mp3";
+        }
+    } else {
+        // After August - continue existing behavior
+        audioFile = "birthday.mp3";
+    }
+    
+    // Set the audio source and play
+    music.src = audioFile;
+    music.play().catch(function(error){
+        console.log("Audio play error:", error);
+    });
 }
 
 // 📅 Date Helpers
@@ -138,70 +183,69 @@ if (countdownElement) {
 
 
 
-
 // 💌 DAILY LOVE MESSAGES
 
 let messages=[
 
-"❤️ 30 days to go… 🎈<br><br>Officially starting the countdown for the most annoying person who’s somehow my favourite too. 😌",
+"❤️ 30 days to go… 🎈<br><br>Officially starting the countdown for the most annoying person who's somehow my favourite too. 😌",
 
 "❤️ 29 days to go.<br><br>Just so you know… someone is already more excited for your birthday than you probably are.",
 
-"❤️ 28 days to go.<br><br>You keep asking, “Mujhme aisa kya special hai?”<br><br>Let’s see… maybe I’ll give you one answer every few days. 🤍",
+"❤️ 28 days to go.<br><br>You keep asking, "Mujhme aisa kya special hai?"<br><br>Let's see… maybe I'll give you one answer every few days. 🤍",
 
-"❤️ 27 days to go.<br><br>Today’s reason: you care more than you let people see.",
+"❤️ 27 days to go.<br><br>Today's reason: you care more than you let people see.",
 
 "❤️ 26 days to go.<br><br>You pretend not to notice things… but somehow you notice everything about me.",
 
-"❤️ 25 days to go.<br><br>You know what’s funny? Random things still remind me of you.",
+"❤️ 25 days to go.<br><br>You know what's funny? Random things still remind me of you.",
 
-"❤️ 24 days to go.<br><br>No reason for today’s message… bas mann kiya tumhe yaad dilane ka ki 24 days left. 😊",
+"❤️ 24 days to go.<br><br>No reason for today's message… bas mann kiya tumhe yaad dilane ka ki 24 days left. 😊",
 
-"❤️ 23 days to go.<br><br>I wonder if you’ll ever stop asking why I love you… maybe not. 😂",
+"❤️ 23 days to go.<br><br>I wonder if you'll ever stop asking why I love you… maybe not. 😂",
 
 "❤️ 22 days to go.<br><br>You make me laugh, irritate me, argue with me… and somehow still make me stay.",
 
 "❤️ 21 days to go.<br><br>Three weeks left. I hope this birthday makes you smile the way you unknowingly make me smile.",
 
-"❤️ 20 days to go.<br><br>I still think the best thing about you is that you never try to impress anyone. You’re just… you.",
+"❤️ 20 days to go.<br><br>I still think the best thing about you is that you never try to impress anyone. You're just… you.",
 
 "❤️ 19 days to go.<br><br>Aaj bas itna… take care of yourself. I need the birthday boy fit and happy. 😌",
 
-"❤️ 18 days to go.<br><br>You’re not perfect… and maybe that’s exactly what I love.",
+"❤️ 18 days to go.<br><br>You're not perfect… and maybe that's exactly what I love.",
 
-"❤️ 17 days to go.<br><br>Today’s reminder: don’t overwork, eat on time, and yes… this is me caring. 😒❤️",
+"❤️ 17 days to go.<br><br>Today's reminder: don't overwork, eat on time, and yes… this is me caring. 😒❤️",
 
 "❤️ 16 days to go.<br><br>You make ordinary days feel less ordinary.",
 
-"❤️ 15 days to go.<br><br>Halfway there. I don’t know why your birthday makes me this excited… but it does.",
+"❤️ 15 days to go.<br><br>Halfway there. I don't know why your birthday makes me this excited… but it does.",
 
 "❤️ 14 days to go.<br><br>I hope one day you see yourself the way I see you.",
 
-"❤️ 13 days to go.<br><br>Today’s answer: your heart is much softer than you pretend.",
+"❤️ 13 days to go.<br><br>Today's answer: your heart is much softer than you pretend.",
 
-"❤️ 12 days to go.<br><br>You’re one of the very few people I never have to force myself to remember. You just cross my mind naturally.",
+"❤️ 12 days to go.<br><br>You're one of the very few people I never have to force myself to remember. You just cross my mind naturally.",
 
 "❤️ 11 days to go.<br><br>I still think meeting you was one of those little accidents life got right.",
 
-"❤️ 10 days to go. 🎉<br><br>Now we’re officially in single digits tomorrow… get ready.",
+"❤️ 10 days to go. 🎉<br><br>Now we're officially in single digits tomorrow… get ready.",
 
 "❤️ 9 days to go.<br><br>Your birthday is coming… and yes, I have been counting from the beginning. 🤍",
 
-"❤️ 8 days to go.<br><br>You’re still my favourite person to annoy.",
+"❤️ 8 days to go.<br><br>You're still my favourite person to annoy.",
 
 "❤️ 7 days to go.<br><br>Final week. No escaping my countdown now. 😌",
 
 "❤️ 6 days to go.<br><br>Thank you for all the little things you think nobody notices.",
 
-"❤️ 5 days to go.<br><br>Maybe what’s special about you isn’t one big thing… maybe it’s a hundred little things.",
+"❤️ 5 days to go.<br><br>Maybe what's special about you isn't one big thing… maybe it's a hundred little things.",
 
 "❤️ 4 days to go.<br><br>And somehow… I fell in love with every one of those little things.",
 
-"❤️ 3 days to go.<br><br>Almost your birthday… and I’m probably more excited than you. 😂",
+"❤️ 3 days to go.<br><br>Almost your birthday… and I'm probably more excited than you. 😂",
 
 "❤️ 2 days to go.<br><br>Just two more sleeps… then I get to celebrate my favourite human.",
 
-"❤️ 1 day to go.<br><br>Tomorrow you’ll ask me again, “Mujhme aisa kya special hai?”<br><br>Tomorrow… I’ll answer."
+"❤️ 1 day to go.<br><br>Tomorrow you'll ask me again, "Mujhme aisa kya special hai?"<br><br>Tomorrow… I'll answer."
 
 ];
 
@@ -329,6 +373,7 @@ function showCake(){
     }
 
 }
+
 // 🎂 Blow Candle
 
 function blowCandle(){
@@ -345,7 +390,6 @@ function blowCandle(){
     },2500);
 
 }
-
 
 
 
@@ -420,37 +464,37 @@ Happy Birthday.
 
 <br><br>
 
-I don’t know if birthdays are supposed to be about gifts, surprises, or perfect words. But if there’s one thing I’ve wanted to answer for the longest time, it’s the question you keep asking me…
+I don't know if birthdays are supposed to be about gifts, surprises, or perfect words. But if there's one thing I've wanted to answer for the longest time, it's the question you keep asking me.
 
 <br><br>
 
-“Why do you love me? What’s so special about me?”
+"Why do you love me? What's so special about me?"
 
 <br><br>
 
-The truth is, I don’t think I ever chose to love you.
+The truth is, I don't think I ever chose to love you.
 
 <br><br>
 
-If love were logical, maybe I would’ve picked someone easier. Someone who never argued with me. Someone who always knew the right words. Someone who made everything simple.
+If love were logical, maybe I would've picked someone easier. Someone who never argued with me. Someone who always knew the right words. Someone who made everything simple.
 
 <br><br>
 
-But then… that wouldn’t have been you.
+But then… that wouldn't have been you.
 
 <br><br>
 
-And somewhere along the way, “you” became my favorite place.
+And somewhere along the way, "you" became my favorite place.
 
 <br><br>
 
-What’s special about you isn’t something I can point at. It’s the little things you probably don’t even notice.
+What's special about you isn't something I can point at. It's the little things you probably don't even notice.
 
 <br><br>
 
 The way you quietly take care of me without announcing it.
 <br>
-The way you notice when something is wrong even when I say I’m fine.
+The way you notice when something is wrong even when I say I'm fine.
 <br>
 The way you remember the smallest things about me.
 
@@ -476,7 +520,7 @@ In moments when we stop talking but still don't stop caring.
 
 <br><br>
 
-We’ve had misunderstandings, distance, and difficult days.
+We've had misunderstandings, distance, and difficult days.
 
 <br><br>
 
@@ -492,7 +536,7 @@ Neither am I.
 
 <br><br>
 
-Maybe that’s why our story has never looked perfect.
+Maybe that's why our story has never looked perfect.
 
 <br><br>
 
@@ -512,7 +556,7 @@ The kind that stays through ego, misunderstandings, silence, and unfinished conv
 
 <br><br>
 
-I love you because when I look at you, I don’t see someone extraordinary.
+I love you because when I look at you, I don't see someone extraordinary.
 
 <br><br>
 
